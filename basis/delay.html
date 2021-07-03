@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Greensock Course</title>
-  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="../main.css">
 </head>
 
 <body>
@@ -23,7 +23,7 @@
   </header>
 
   <pre>
-    TweenMax.staggerTo(target, time, {properties}, stagger)
+    delay: time in seconds
   </pre>
 
   <section class="gallery">
@@ -110,12 +110,18 @@
     </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>
     <script>
+      const title = document.querySelector('.title');
       const items = document.querySelectorAll('.item');
 
-      TweenMax.staggerTo(items, 1, {
-        scale: 0,
-        opacity: 0,
-      }, 1);
+      TweenMax.from(title, 2, {
+        x: -500,
+      });
+
+      TweenMax.to(title, 2, {
+        x: 500,
+        delay: 3,
+      });
+
     </script>
 </body>
 
